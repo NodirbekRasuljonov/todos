@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:todos/screens/login_page.dart';
+import 'package:todos/screens/signup_page.dart';
 import 'package:todos/screens/splash_screen.dart';
 
 class MyRoute {
@@ -7,7 +9,15 @@ class MyRoute {
     switch (s.name) {
       case '/splash':
         return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
+          builder: (context) => SplashScreen(),
+        );
+      case '/signup':
+        return MaterialPageRoute(
+          builder: (context) => SignUpPage(),
+        );
+      case '/login':
+        return MaterialPageRoute(
+          builder: (context) => const LoginPage(),
         );
     }
   }
