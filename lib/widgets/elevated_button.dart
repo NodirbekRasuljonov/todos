@@ -7,7 +7,8 @@ class MyElevatedButton {
   static ElevatedButton myButton(
       {required String text,
       required String route,
-      required BuildContext context}) {
+      required BuildContext context,
+      Function? func}) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         primary: ColorConst.kPrimaryColor,
@@ -16,8 +17,13 @@ class MyElevatedButton {
           fontWeight: FontWeight.w600,
         ),
       ),
-      onPressed: () {
-        Navigator.pushNamedAndRemoveUntil(context, route, (route) => false);
+      onPressed: ()async {
+        
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          route,
+          (route) => false,
+        );
       },
       child: Text(text),
     );

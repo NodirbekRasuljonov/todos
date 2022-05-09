@@ -1,29 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class MyProvider extends ChangeNotifier{
-  GlobalKey key=GlobalKey<FormState>();
-  TextEditingController namecontroller=TextEditingController();
-  TextEditingController emailcontroller=TextEditingController();
-  TextEditingController passwordcontroller=TextEditingController();
-  TextEditingController confirmcontroller=TextEditingController();
+class MyProvider extends ChangeNotifier {
+  GlobalKey key = GlobalKey<FormState>();
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController emailcontroller = TextEditingController();
+  TextEditingController passwordcontroller = TextEditingController();
+  TextEditingController confirmcontroller = TextEditingController();
+  TextEditingController loginemail = TextEditingController();
+  TextEditingController loginpass = TextEditingController();
 
-  FirebaseAuth auth=FirebaseAuth.instance;
+  FirebaseAuth auth = FirebaseAuth.instance;
+  UserCredential? user;
 
-  Future signUp({required BuildContext context})async {
+  Future signUp({required BuildContext context}) async {
     try {
-      await auth.createUserWithEmailAndPassword(email: emailcontroller.text
-      , password: confirmcontroller.text
-      );
+      user= await auth.createUserWithEmailAndPassword(
+          email: emailcontroller.text, password: passwordcontroller.text);
       debugPrint("Welcome");
-      Navigator.pushNamedAndRemoveUntil(context, '/login', (route) => false);
-
     } catch (e) {
       debugPrint("salom");
-
-       
     }
   }
-
-
 }

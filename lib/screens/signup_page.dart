@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:todos/core/constants/color_const.dart';
 import 'package:todos/core/constants/size_const.dart';
 import 'package:todos/core/constants/text_const.dart';
 import 'package:todos/provider/textfield_provider.dart';
@@ -12,11 +14,9 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.height,
-
         child: SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
@@ -62,11 +62,13 @@ class SignUpPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         MyTextField.textFormField(
-                          controller: context.watch<MyProvider>().namecontroller,
+                          controller:
+                              context.watch<MyProvider>().namecontroller,
                           hint: 'Enter your full name',
                         ),
                         MyTextField.textFormField(
-                          controller: context.watch<MyProvider>().emailcontroller,
+                          controller:
+                              context.watch<MyProvider>().emailcontroller,
                           hint: 'Enter Email',
                         ),
                         MyTextField.textFormField(
@@ -75,12 +77,12 @@ class SignUpPage extends StatelessWidget {
                           hint: 'Enter Password',
                         ),
                         MyTextField.textFormField(
-                          controller: context.watch<MyProvider>().confirmcontroller,
+                          controller:
+                              context.watch<MyProvider>().confirmcontroller,
                           hint: 'Confim Pasword',
                         )
                       ],
                     ),
-                    
                   ),
                 ),
                 Positioned(
@@ -88,10 +90,15 @@ class SignUpPage extends StatelessWidget {
                   bottom: MediaQuery.of(context).size.height * 0.1,
                   left: MediaQuery.of(context).size.height * 0.031,
                   right: MediaQuery.of(context).size.height * 0.031,
-                  child: MyElevatedButton.myButton(
-                    text: TextConst.register,
-                    route: '/login',
-                    context: context,
+                  
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(primary: ColorConst.kPrimaryColor),
+                    child: Text(TextConst.register),
+                    onPressed: () {
+                      debugPrint("salom");
+                      context.read<MyProvider>().signUp(context: context);
+                      debugPrint("Xayr");
+                    },
                   ),
                 ),
                 Positioned(
