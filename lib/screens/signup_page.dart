@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:todos/core/constants/color_const.dart';
 import 'package:todos/core/constants/size_const.dart';
 import 'package:todos/core/constants/text_const.dart';
 import 'package:todos/provider/textfield_provider.dart';
-import 'package:todos/widgets/elevated_button.dart';
+import 'package:todos/widgets/snackbar.dart';
 import 'package:todos/widgets/textfield.dart';
 import 'package:provider/provider.dart';
 
@@ -90,14 +89,14 @@ class SignUpPage extends StatelessWidget {
                   bottom: MediaQuery.of(context).size.height * 0.1,
                   left: MediaQuery.of(context).size.height * 0.031,
                   right: MediaQuery.of(context).size.height * 0.031,
-                  
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(primary: ColorConst.kPrimaryColor),
+                    style: ElevatedButton.styleFrom(
+                      primary: ColorConst.kPrimaryColor,
+                    ),
                     child: Text(TextConst.register),
-                    onPressed: () {
-                      debugPrint("salom");
-                      context.read<MyProvider>().signUp(context: context);
-                      debugPrint("Xayr");
+                    onPressed: () async {
+                    
+                      await context.read<MyProvider>().signUp(context: context);
                     },
                   ),
                 ),

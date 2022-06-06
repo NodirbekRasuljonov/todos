@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
       onGenerateRoute: _myroute.onGenerateRoute,
-      initialRoute: '/splash',
+      initialRoute: '/login',
     );
   }
 }

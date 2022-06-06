@@ -13,7 +13,7 @@ class MyRoute {
         );
       case '/signup':
         return MaterialPageRoute(
-          builder: (context) => SignUpPage(),
+          builder: (context) =>const SignUpPage(),
         );
       case '/login':
         return MaterialPageRoute(

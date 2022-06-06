@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:todos/widgets/snackbar.dart';
 
 class MyProvider extends ChangeNotifier {
   GlobalKey key = GlobalKey<FormState>();
@@ -15,11 +16,15 @@ class MyProvider extends ChangeNotifier {
 
   Future signUp({required BuildContext context}) async {
     try {
-      user= await auth.createUserWithEmailAndPassword(
-          email: emailcontroller.text, password: passwordcontroller.text);
-      debugPrint("Welcome");
-    } catch (e) {
       debugPrint("salom");
+      user= await auth.createUserWithEmailAndPassword(
+          email: emailcontroller.text, password: passwordcontroller.text,
+          );
+          Navigator.pushNamed(context, '/login');
+
+      
+    } catch (e) {
+      debugPrint("Dont");
     }
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todos/core/constants/color_const.dart';
 import 'package:todos/core/constants/size_const.dart';
-import 'package:todos/core/constants/text_const.dart';
 
 class MyElevatedButton {
   static ElevatedButton myButton(

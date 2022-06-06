@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:todos/core/constants/radius_const.dart';
 import 'package:todos/core/constants/size_const.dart';
-import 'package:todos/provider/textfield_provider.dart';
-import 'package:todos/widgets/textfield.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,54 +8,91 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.height,
-        child: SingleChildScrollView(
-          child: SizedBox(
-            child: Stack(
-              children: [
-                Positioned(
-                  child: Image.asset('assets/images/splashshape.png'),
+      backgroundColor: Color(0xffeeeeee),
+      body: SingleChildScrollView(
+        child: SizedBox(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.height,
+          child: Stack(
+            children: [
+              Positioned(
+                child: Image.asset(
+                  'assets/images/splashshape.png',
                 ),
-                Positioned(
-                  top: MediaQuery.of(context).size.height * 0.226,
-                  left: MediaQuery.of(context).size.height * 0.103,
-                  right: MediaQuery.of(context).size.height * 0.129,
-                  bottom: MediaQuery.of(context).size.height * 0.565,
-                  child: Text(
-                    "Welcome Back!",
-                    style: TextStyle(
-                        fontSize: SizeConst.medium, fontWeight: FontWeight.w600),
-                    textAlign: TextAlign.center,
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.22,
+                left: MediaQuery.of(context).size.height * 0,
+                right: MediaQuery.of(context).size.height * 0.0129,
+                child: Text(
+                  'Welcome back',
+                  style: TextStyle(
+                    fontSize: SizeConst.large,
+                    fontWeight: FontWeight.w600,
                   ),
+                  textAlign: TextAlign.center,
                 ),
-                Positioned(
-                  top: MediaQuery.of(context).size.height * 0.280,
-                  left: MediaQuery.of(context).size.height * 0.056,
-                  right: MediaQuery.of(context).size.height * 0.156,
-                  bottom: MediaQuery.of(context).size.height * 0.365,
-                  child: Image.asset('assets/images/loginpage.png'),
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.17,
+                left: MediaQuery.of(context).size.height * 0.056,
+                right: MediaQuery.of(context).size.height * 0.0156,
+                child: Image.asset(
+                  'assets/images/loginpage.png',
                 ),
-                Positioned(
-                  top: MediaQuery.of(context).size.height * 0.480,
-                  left: MediaQuery.of(context).size.height * 0.034,
-                  bottom: MediaQuery.of(context).size.height * 0.208,
-                  right: MediaQuery.of(context).size.height*0.034,
-                  child: Container(
-                    color: Colors.red,
-                    height: MediaQuery.of(context).size.height * 0.1,
-                    width: MediaQuery.of(context).size.height * 0.1,
-                    child: Column(
-                      children: [
-                        MyTextField.textFormField(controller: context.watch<MyProvider>().loginemail, hint: 'Enter Your Email'),
-                
-                      ],
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.55,
+                left: MediaQuery.of(context).size.height * 0.02,
+                right: MediaQuery.of(context).size.height * 0.02,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    hintText: 'Enter your email',
+                    hintStyle: TextStyle(fontWeight: FontWeight.w600,color: Colors.black,),
+                    fillColor: Colors.white,
+                    filled: true,
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(
+                        RadiusConst.medium,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(
+                        RadiusConst.medium,
+                      ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              Positioned(
+                top: MediaQuery.of(context).size.height * 0.65,
+                left: MediaQuery.of(context).size.height * 0.02,
+                right: MediaQuery.of(context).size.height * 0.02,
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    fillColor: Colors.white,
+                    hintText: 'Enter your password',
+                    hintStyle: TextStyle(color: Colors.black,fontWeight: FontWeight.w600),
+                    filled: true,
+                    border: OutlineInputBorder(
+                      
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(
+                        RadiusConst.medium,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.transparent),
+                      borderRadius: BorderRadius.circular(
+                        RadiusConst.medium,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ),
       ),
