@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todos/screens/login_page.dart';
+import 'package:todos/screens/main_page.dart';
 import 'package:todos/screens/signup_page.dart';
 import 'package:todos/screens/splash_screen.dart';
 
@@ -17,7 +18,11 @@ class MyRoute {
         );
       case '/login':
         return MaterialPageRoute(
-          builder: (context) => const LoginPage(),
+          builder: (context) =>  LoginPage(),
+        );
+         case '/main':
+        return MaterialPageRoute(
+          builder: (context) => const MainPage(),
         );
     }
   }

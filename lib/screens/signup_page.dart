@@ -56,7 +56,6 @@ class SignUpPage extends StatelessWidget {
                   right: MediaQuery.of(context).size.height * 0.022,
                   bottom: MediaQuery.of(context).size.height * 0.232,
                   child: Form(
-                    key: context.watch<MyProvider>().key,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
