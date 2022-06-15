@@ -22,7 +22,7 @@ class MyRoute {
         );
          case '/main':
         return MaterialPageRoute(
-          builder: (context) => const MainPage(),
+          builder: (context) => MainPage(),
         );
     }
   }

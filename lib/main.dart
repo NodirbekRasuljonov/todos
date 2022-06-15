@@ -10,6 +10,7 @@ void main(List<String> args) async {
   await Firebase.initializeApp();
   await NotificationService().initNotification();
 
+
   runApp(
     MultiProvider(
       providers: [

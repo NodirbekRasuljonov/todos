@@ -107,7 +107,8 @@ class LoginPage extends StatelessWidget {
                 left: MediaQuery.of(context).size.height * 0.02,
                 top: MediaQuery.of(context).size.height * 0.745,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                  },
                   child: Text(
                     "Forgot Password ?",
                     style: TextStyle(
@@ -126,7 +127,8 @@ class LoginPage extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                       primary: ColorConst.kPrimaryColor),
                   onPressed: () {
-                   context.read<MyProvider>().logIn(context: context, controller1: loginemail, controller2: loginpass);
+                                        context.read<MyProvider>().writeToDB();
+
                   },
                   child: Text(
                     "Login",
